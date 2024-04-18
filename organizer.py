@@ -4,21 +4,24 @@ import shutil
 
 
 img_types =('.png', '.jpg', '.webp', '.JPG', '.JPEG', '.txt')
-docs_types = ('.DOC', '.DOCX', '.ODT', '.pdf', '.PPT', '.PPTX', '.txt', 'docx')
+docs_types = ('.DOC', '.DOCX', '.ODT', '.pdf', '.PPT', '.PPTX', 'docx')
 ps_files = ['.psd', '.PSD']
 
 
 
 initial=os.path.join(os.path.expanduser("~"), "Music")
-output_img=os.path.join(os.path.expanduser("~"), "Organized\\Organized Images")
-output_docs=os.path.join(os.path.expanduser("~"), "Organized\\Organized Documents")
-output_videos=os.path.join(os.path.expanduser("~"), "Organized\\Organized Videos")
-output_audios=os.path.join(os.path.expanduser('~'), "Organized\\Organized Audios")
-output_photoshop=os.path.join(os.path.expanduser('~'), 'Organized\\Organized PSDs')
+output_img=os.path.join(os.path.expanduser("~"), "Documents\\Organized\\Organized Images")
+output_docs=os.path.join(os.path.expanduser("~"), "Documents\\Organized\\Organized Documents")
+output_videos=os.path.join(os.path.expanduser("~"), "Documents\\Organized\\Organized Videos")
+output_audios=os.path.join(os.path.expanduser('~'), "Documents\\Organized\\Organized Audios")
+output_photoshop=os.path.join(os.path.expanduser('~'), 'Documents\\Organized\\Organized PSDs')
 
 
 if not os.path.exists(output_img):
     os.makedirs(output_img)
+
+if not os.path.exists(output_docs):
+    os.makedirs(output_docs)
 
 
 
