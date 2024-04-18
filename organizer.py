@@ -23,6 +23,9 @@ if not os.path.exists(output_img):
 if not os.path.exists(output_docs):
     os.makedirs(output_docs)
 
+if not os.path.exists(output_videos):
+    os.makedirs(output_videos)
+
 
 
 
