@@ -4,7 +4,7 @@ import shutil
 
 
 img_types =('.png', '.jpg', '.webp', '.JPG', '.JPEG', '.txt')
-docs_types = ['.DOC', '.DOCX', '.ODT', '.pdf', '.PPT', '.PPTX', '.txt', 'docx']
+docs_types = ('.DOC', '.DOCX', '.ODT', '.pdf', '.PPT', '.PPTX', '.txt', 'docx')
 ps_files = ['.psd', '.PSD']
 
 
