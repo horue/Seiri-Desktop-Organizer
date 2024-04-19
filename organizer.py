@@ -81,7 +81,7 @@ def organize_files():
             shutil.move(os.path.join(initial, zip_file), output_zip)
 
 
-
-create_path()
-organize_files()
-print(psds)
+def main():
+    create_path()
+    organize_files()
+    print(psds)
