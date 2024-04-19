@@ -5,7 +5,7 @@ import shutil
 
 img_types =('.png', '.jpg', '.webp', '.JPG', '.JPEG')
 docs_types = ('.doc', '.odt', '.pdf', '.PPT', '.pptx', '.docx', '.txt', '.rtf')
-video_types = ('.mp4')
+video_types = ('.mp4', '.avi')
 audio_types = ('.mp3', '.webm', '.ogg')
 ps_files = ['.psd', '.PSD']
 zip_files = ('.rar', '.7z', '.zip')
@@ -44,6 +44,7 @@ def create_path():
 files = os.listdir(initial)
 img_files = [f for f in files if os.path.splitext(f)[1].lower() in img_types]
 doc_files = [f for f in files if os.path.splitext(f)[1].lower() in docs_types]
+video_files = [f for f in files if os.path.slipttext(f)[1].lower() in video_types]
 audio_files = [f for f in files if os.path.splitext(f)[1].lower() in audio_types]
 psds = [f for f in files if os.path.splitext(f)[1].lower() in ps_files]
 zips = [f for f in files if os.path.splitext(f)[1].lower() in zip_files]
@@ -62,6 +63,14 @@ def organize_files():
             shutil.move(os.path.join(initial, doc_file), output_docs)
         elif os.path.exists(file):
             shutil.move(os.path.join(initial, doc_file), os.path.join(output_docs, 'copy_of_' + doc_file))
+
+    for video_file in video_files:
+        file = os.path.join(output_videos, os.path.basename(video_file))
+        if not os.path.exists(file):
+            shutil.move(os.path.join(initial, video_file), output_videos)
+        elif os.path.exists(file):
+            shutil.move(os.path.join(initial, video_file), os.path.join(output_videos, 'copy_of_' + video_file))
+    
 
     for audio_file in audio_files:
         file = os.path.join(output_audios, os.path.basename(audio_file))
@@ -85,3 +94,5 @@ def main():
     create_path()
     organize_files()
     print(psds)
+
+main()
