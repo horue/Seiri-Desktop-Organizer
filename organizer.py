@@ -4,7 +4,7 @@ import shutil
 
 
 img_types =('.png', '.jpg', '.webp', '.JPG', '.JPEG')
-docs_types = ('.doc', '.odt', '.pdf', '.PPT', '.pptx', 'docx', '.txt', '.rtf')
+docs_types = ('.doc', '.odt', '.pdf', '.PPT', '.pptx', '.docx', '.txt', '.rtf')
 video_types = ('.mp4')
 audio_types = ('.mp3', '.webm', '.ogg')
 ps_files = ['.psd', '.PSD']
@@ -46,7 +46,7 @@ img_files = [f for f in files if os.path.splitext(f)[1].lower() in img_types]
 doc_files = [f for f in files if os.path.splitext(f)[1].lower() in docs_types]
 audio_files = [f for f in files if os.path.splitext(f)[1].lower() in audio_types]
 psds = [f for f in files if os.path.splitext(f)[1].lower() in ps_files]
-
+zips = [f for f in files if os.path.splitext(f)[1].lower() in zip_files]
 
 def organize_files():
     for img_file in img_files:
@@ -74,6 +74,11 @@ def organize_files():
         file = os.path.join(output_photoshop, os.path.basename(psd_file))
         if not os.path.exists(file):
             shutil.move(os.path.join(initial, psd_file), output_photoshop)
+
+    for zip_file in zips:
+        file = os.path.join(output_zip, os.path.basename(zip_file))
+        if not os.path.exists(file):
+            shutil.move(os.path.join(initial, zip_file), output_zip)
 
 
 
