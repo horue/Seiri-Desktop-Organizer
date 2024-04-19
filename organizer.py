@@ -54,17 +54,21 @@ def organize_files():
         if not os.path.exists(file):
             shutil.move(os.path.join(initial, img_file), output_img)
         elif os.path.exists(file):
-            shutil.move(os.path.join(initial, 'copy_of_'+img_file), output_img)
+            shutil.move(os.path.join(initial, img_file), os.path.join(output_img, 'copy_of_' + img_file))
 
     for doc_file in doc_files:
         file = os.path.join(output_docs, os.path.basename(doc_file))
         if not os.path.exists(file):
             shutil.move(os.path.join(initial, doc_file), output_docs)
+        elif os.path.exists(file):
+            shutil.move(os.path.join(initial, doc_file), os.path.join(output_docs, 'copy_of_' + doc_file))
 
     for audio_file in audio_files:
         file = os.path.join(output_audios, os.path.basename(audio_file))
         if not os.path.exists(file):
             shutil.move(os.path.join(initial, audio_file), output_audios)
+        elif os.path.exists(file):
+            shutil.move(os.path.join(initial, audio_file), os.path.join(output_audios, 'copy_of_' + audio_file))
 
     for psd_file in psds:
         file = os.path.join(output_photoshop, os.path.basename(psd_file))
