@@ -28,6 +28,9 @@ if not os.path.exists(output_videos):
     os.makedirs(output_videos)
 
 
+if not os.path.exists(output_audios):
+    os.makedirs(output_audios)
+
 
 
 files = os.listdir(initial)
