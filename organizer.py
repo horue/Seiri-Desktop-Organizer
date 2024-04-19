@@ -3,10 +3,11 @@ import shutil
 
 
 
-img_types =('.png', '.jpg', '.webp', '.JPG', '.JPEG', '.txt')
-docs_types = ('.DOC', '.DOCX', '.ODT', '.pdf', '.PPT', '.PPTX', 'docx')
+img_types =('.png', '.jpg', '.webp', '.JPG', '.JPEG')
+docs_types = ('.DOC', '.ODT', '.pdf', '.PPT', '.PPTX', 'docx', '.txt')
 audio_types = ('mp3', 'webm')
 ps_files = ['.psd', '.PSD']
+zip_files = ['.rar', '.7z']
 
 
 
@@ -16,6 +17,7 @@ output_docs=os.path.join(os.path.expanduser("~"), "Documents\\Organized\\Organiz
 output_videos=os.path.join(os.path.expanduser("~"), "Documents\\Organized\\Organized Videos")
 output_audios=os.path.join(os.path.expanduser('~'), "Documents\\Organized\\Organized Audios")
 output_photoshop=os.path.join(os.path.expanduser('~'), 'Documents\\Organized\\Organized PSDs')
+output_zip=os.path.join(os.path.expanduser('~'), 'Documents\\Organized\\Organized ZIPs')
 
 
 if not os.path.exists(output_img):
@@ -35,8 +37,8 @@ if not os.path.exists(output_audios):
 
 files = os.listdir(initial)
 img_files = [f for f in files if os.path.splitext(f)[1].lower() in img_types]
-doc_files = [f for f in files if os.path.splitext(f)[1].lower in docs_types]
-audio_files = [f for f in files if os.path.splitext(f)[1].lower in audio_files]
+doc_files = [f for f in files if os.path.splitext(f)[1].lower() in docs_types]
+audio_files = [f for f in files if os.path.splitext(f)[1].lower() in audio_types]
 psds = [f for f in files if os.path.splitext(f)[1].lower() in ps_files]
 
 
