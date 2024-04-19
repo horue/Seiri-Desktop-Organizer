@@ -5,6 +5,7 @@ import shutil
 
 img_types =('.png', '.jpg', '.webp', '.JPG', '.JPEG', '.txt')
 docs_types = ('.DOC', '.DOCX', '.ODT', '.pdf', '.PPT', '.PPTX', 'docx')
+audio_types = ('mp3', 'webm')
 ps_files = ['.psd', '.PSD']
 
 
@@ -32,6 +33,7 @@ if not os.path.exists(output_videos):
 files = os.listdir(initial)
 img_files = [f for f in files if os.path.splitext(f)[1].lower() in img_types]
 doc_files = [f for f in files if os.path.splitext(f)[1].lower in docs_types]
+audio_files = [f for f in files if os.path.splitext(f)[1].lower in audio_files]
 psds = [f for f in files if os.path.splitext(f)[1].lower() in ps_files]
 
 
