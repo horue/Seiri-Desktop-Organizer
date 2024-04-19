@@ -9,7 +9,7 @@ video_types = ('.mp4', '.avi')
 audio_types = ('.mp3', '.webm', '.ogg')
 ps_files = ['.psd', '.PSD']
 zip_files = ('.rar', '.7z', '.zip')
-
+code_files = ('.py', '.jar', '.c')
 
 
 initial=os.path.join(os.path.expanduser("~"), "Music")
@@ -19,6 +19,7 @@ output_videos=os.path.join(os.path.expanduser("~"), "Documents\\Organized\\Organ
 output_audios=os.path.join(os.path.expanduser('~'), "Documents\\Organized\\Organized Audios")
 output_photoshop=os.path.join(os.path.expanduser('~'), 'Documents\\Organized\\Organized PSDs')
 output_zip=os.path.join(os.path.expanduser('~'), 'Documents\\Organized\\Organized ZIPs')
+output_code=os.path.join(os.path.expanduser('~'), 'Documents\\Organized\\Organized Codes')
 
 def create_path():
     if not os.path.exists(output_img):
@@ -39,15 +40,19 @@ def create_path():
     if not os.path.exists(output_zip):
         os.makedirs(output_zip)
 
+    if not os.path.exists(output_code):
+        os.makedirs(output_code)
+
 
 
 files = os.listdir(initial)
 img_files = [f for f in files if os.path.splitext(f)[1].lower() in img_types]
 doc_files = [f for f in files if os.path.splitext(f)[1].lower() in docs_types]
-video_files = [f for f in files if os.path.slipttext(f)[1].lower() in video_types]
+video_files = [f for f in files if os.path.splitext(f)[1].lower() in video_types]
 audio_files = [f for f in files if os.path.splitext(f)[1].lower() in audio_types]
 psds = [f for f in files if os.path.splitext(f)[1].lower() in ps_files]
 zips = [f for f in files if os.path.splitext(f)[1].lower() in zip_files]
+codes = [f for f in files if os.path.splitext(f)[1].lower() in code_files]
 
 def organize_files():
     for img_file in img_files:
@@ -88,6 +93,13 @@ def organize_files():
         file = os.path.join(output_zip, os.path.basename(zip_file))
         if not os.path.exists(file):
             shutil.move(os.path.join(initial, zip_file), output_zip)
+
+    for code_file in codes:
+        file = os.path.join(output_code, os.path.basename(code_file))
+        if not os.path.exists(file):
+            shutil.move(os.path.join(initial, code_file), output_code)
+        elif os.path.exists(file):
+            shutil.move(os.path.join(initial, code_file), os.path.join(output_code, 'copy_of_' + code_file))
 
 
 def main():
