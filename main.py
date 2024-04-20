@@ -6,5 +6,5 @@ while True:
     try:
         main()
         time.sleep(5)
-    except:
-        print(1)
+    except Exception as e:
+        print(e)
