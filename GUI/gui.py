@@ -13,6 +13,9 @@ def initial(root):
     b1=ct.CTkButton(root, text='Select Folder', command=lambda:print(2))
     b1.pack(pady=20)
 
+    b2=ct.CTkButton(root, text='Organize', command=lambda:print(5))
+    b2.pack()
+
     print(1)
 
 def root():
