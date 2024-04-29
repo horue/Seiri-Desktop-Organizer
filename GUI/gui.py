@@ -1,6 +1,10 @@
 import customtkinter as ct
 
 
+def select_folder(l3):
+    l3.configure(text='test')
+
+
 def initial(root):
     l1=ct.CTkLabel(root, text='Seiri - Desktop Organizer')
     l1.pack(pady=20)
@@ -10,7 +14,7 @@ def initial(root):
     l3=ct.CTkLabel(root, text='None')
     l3.pack()
 
-    b1=ct.CTkButton(root, text='Select Folder', command=lambda:print(2))
+    b1=ct.CTkButton(root, text='Select Folder', command=lambda:select_folder(l3))
     b1.pack(pady=20)
 
     b2=ct.CTkButton(root, text='Organize', command=lambda:print(5))
