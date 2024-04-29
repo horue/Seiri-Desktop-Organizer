@@ -2,7 +2,9 @@ import customtkinter as ct
 import easygui
 
 def select_folder(l3):
-    l3.configure(text='test')
+    global source_path
+    source_path = easygui.diropenbox()
+    l3.configure(text=source_path)
 
 
 def initial(root):
