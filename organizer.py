@@ -95,6 +95,8 @@ def organize_files():
         file = os.path.join(output_zip, os.path.basename(zip_file))
         if not os.path.exists(file):
             shutil.move(os.path.join(initial, zip_file), output_zip)
+        elif os.path.exists(file):
+            shutil.move(os.path.join(initial, zip_file), os.path.join(output_zip, 'copy_of_' + zip_file))
 
     for code_file in codes:
         file = os.path.join(output_code, os.path.basename(code_file))
