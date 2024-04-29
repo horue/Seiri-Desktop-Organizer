@@ -88,6 +88,8 @@ def organize_files():
         file = os.path.join(output_photoshop, os.path.basename(psd_file))
         if not os.path.exists(file):
             shutil.move(os.path.join(initial, psd_file), output_photoshop)
+        elif os.path.exists(file):
+            shutil.move(os.path.join(initial, psd_file), os.path.join(output_photoshop, 'copy_of_' + psd_file))
 
     for zip_file in zips:
         file = os.path.join(output_zip, os.path.basename(zip_file))
