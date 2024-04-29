@@ -1,5 +1,6 @@
 import os
 import shutil
+from gui import source_path
 
 
 
@@ -12,7 +13,7 @@ zip_files = ('.rar', '.7z', '.zip')
 code_files = ('.py', '.jar', '.c')
 
 
-initial=os.path.join(os.path.expanduser("~"), "Desktop")
+initial=os.path.join(os.path.expanduser("~"), source_path)
 output_img=os.path.join(os.path.expanduser("~"), "Documents\\Organized\\Organized Images")
 output_docs=os.path.join(os.path.expanduser("~"), "Documents\\Organized\\Organized Documents")
 output_videos=os.path.join(os.path.expanduser("~"), "Documents\\Organized\\Organized Videos")
