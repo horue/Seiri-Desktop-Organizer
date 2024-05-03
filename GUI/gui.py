@@ -2,10 +2,15 @@ import customtkinter as ct
 import easygui
 from organizer import create_path, organize_files
 
-
-def organize():
-    create_path()
-    organize_files(source_path)
+def organize(check_var):
+    option = check_var.get()
+    if option == 'on':
+        while True:
+            create_path()
+            organize_files(source_path)
+    else:
+        create_path()
+        organize_files(source_path)
 
 
 def select_folder(l3):
@@ -23,13 +28,14 @@ def initial(root):
     l3=ct.CTkLabel(root, text='None')
     l3.pack()
 
-    c1 = ct.CTkCheckBox(root, text='Run continuously', checkbox_width=15, checkbox_height=15, corner_radius=0, border_width=2)
+    c1 = ct.CTkCheckBox(root, text='Run continuously', checkbox_width=15, checkbox_height=15, corner_radius=0, border_width=2, variable=check_var, onvalue='on', offvalue='off')
+    check_var = ct.StringVar(value='on')
     c1.pack(pady=10)
 
     b1=ct.CTkButton(root, text='Select Folder', command=lambda:select_folder(l3))
     b1.pack(pady=20)
 
-    b2=ct.CTkButton(root, text='Organize', command=lambda:organize())
+    b2=ct.CTkButton(root, text='Organize', command=lambda:organize(check_var))
     b2.pack()
 
 def root():
