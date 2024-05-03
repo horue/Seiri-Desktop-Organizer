@@ -109,7 +109,3 @@ def main():
     create_path()
     organize_files()
     print('Organizing...')
-
-
-
-main()
