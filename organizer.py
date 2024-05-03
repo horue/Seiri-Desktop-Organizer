@@ -22,27 +22,9 @@ output_zip=os.path.join(os.path.expanduser('~'), 'Documents\\Organized\\Organize
 output_code=os.path.join(os.path.expanduser('~'), 'Documents\\Organized\\Organized Codes')
 
 def create_path():
-    if not os.path.exists(output_img):
-        os.makedirs(output_img)
-
-    if not os.path.exists(output_docs):
-        os.makedirs(output_docs)
-
-    if not os.path.exists(output_videos):
-        os.makedirs(output_videos)
-
-    if not os.path.exists(output_audios):
-        os.makedirs(output_audios)
-
-    if not os.path.exists(output_photoshop):
-        os.makedirs(output_photoshop)
-
-    if not os.path.exists(output_zip):
-        os.makedirs(output_zip)
-
-    if not os.path.exists(output_code):
-        os.makedirs(output_code)
-
+    for path in [output_img, output_docs, output_videos, output_audios, output_photoshop, output_zip, output_code]:
+        if not os.path.exists(path):
+            os.makedirs(path)
 
 def organize_files():
     files = os.listdir(initial)
