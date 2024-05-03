@@ -26,16 +26,18 @@ def create_path():
             os.makedirs(path)
 
 
-files = os.listdir(source_path)
-img_files = [f for f in files if os.path.splitext(f)[1].lower() in img_types]
-doc_files = [f for f in files if os.path.splitext(f)[1].lower() in docs_types]
-video_files = [f for f in files if os.path.splitext(f)[1].lower() in video_types]
-audio_files = [f for f in files if os.path.splitext(f)[1].lower() in audio_types]
-psds = [f for f in files if os.path.splitext(f)[1].lower() in ps_files]
-zips = [f for f in files if os.path.splitext(f)[1].lower() in zip_files]
-codes = [f for f in files if os.path.splitext(f)[1].lower() in code_files]
+
 
 def organize_files(source_path):
+    files = os.listdir(source_path)
+    img_files = [f for f in files if os.path.splitext(f)[1].lower() in img_types]
+    doc_files = [f for f in files if os.path.splitext(f)[1].lower() in docs_types]
+    video_files = [f for f in files if os.path.splitext(f)[1].lower() in video_types]
+    audio_files = [f for f in files if os.path.splitext(f)[1].lower() in audio_types]
+    psds = [f for f in files if os.path.splitext(f)[1].lower() in ps_files]
+    zips = [f for f in files if os.path.splitext(f)[1].lower() in zip_files]
+    codes = [f for f in files if os.path.splitext(f)[1].lower() in code_files]
+
     for img_file in img_files:
         file = os.path.join(output_img, os.path.basename(img_file))
         if not os.path.exists(file):
@@ -90,7 +92,7 @@ def organize_files(source_path):
 def main():
     create_path()
     organize_files()
-    print(psds)
+    print(1)
 
 
 
