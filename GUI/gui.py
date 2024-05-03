@@ -1,11 +1,11 @@
 import customtkinter as ct
 import easygui
-from organizer import *
+from organizer import create_path, organize_files
 
 
 def organize():
     create_path()
-    organize_files()
+    organize_files(source_path)
 
 
 def select_folder(l3):
@@ -26,7 +26,7 @@ def initial(root):
     b1=ct.CTkButton(root, text='Select Folder', command=lambda:select_folder(l3))
     b1.pack(pady=20)
 
-    b2=ct.CTkButton(root, text='Organize', command=organize)
+    b2=ct.CTkButton(root, text='Organize', command=lambda:organize())
     b2.pack()
 
     print(1)
