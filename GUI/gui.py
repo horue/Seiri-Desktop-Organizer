@@ -20,6 +20,7 @@ def select_folder(l3):
 
 
 def initial(root):
+    check_var = ct.StringVar(value='off')
     l1=ct.CTkLabel(root, text='Seiri - Desktop Organizer')
     l1.pack(pady=20)
 
@@ -29,7 +30,6 @@ def initial(root):
     l3.pack()
 
     c1 = ct.CTkCheckBox(root, text='Run continuously', checkbox_width=15, checkbox_height=15, corner_radius=0, border_width=2, variable=check_var, onvalue='on', offvalue='off')
-    check_var = ct.StringVar(value='on')
     c1.pack(pady=10)
 
     b1=ct.CTkButton(root, text='Select Folder', command=lambda:select_folder(l3))
