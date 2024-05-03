@@ -29,8 +29,6 @@ def initial(root):
     b2=ct.CTkButton(root, text='Organize', command=lambda:organize())
     b2.pack()
 
-    print(1)
-
 def root():
     root = ct.CTk()
     root.geometry("400x350")
