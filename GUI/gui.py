@@ -23,6 +23,9 @@ def initial(root):
     l3=ct.CTkLabel(root, text='None')
     l3.pack()
 
+    c1 = ct.CTkCheckBox(root, text='Run continuously', checkbox_width=15, checkbox_height=15, corner_radius=0, border_width=2)
+    c1.pack(pady=10)
+
     b1=ct.CTkButton(root, text='Select Folder', command=lambda:select_folder(l3))
     b1.pack(pady=20)
 
