@@ -87,13 +87,3 @@ def organize_files(source_path):
             shutil.move(os.path.join(source_path, code_file), output_code)
         elif os.path.exists(file):
             shutil.move(os.path.join(source_path, code_file), os.path.join(output_code, 'copy_of_' + code_file))
-
-
-def main():
-    create_path()
-    organize_files()
-    print(1)
-
-
-
-main()
