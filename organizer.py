@@ -3,7 +3,7 @@ import shutil
 
 
 
-img_types =('.png', '.jpg', '.webp', '.JPG', '.JPEG')
+img_types =('.png', '.jpg', '.webp', '.JPG', '.JPEG', 'jpeg')
 docs_types = ('.doc', '.odt', '.pdf', '.PPT', '.pptx', '.docx', '.txt', '.rtf')
 video_types = ('.mp4', '.avi')
 audio_types = ('.mp3', '.webm', '.ogg')
