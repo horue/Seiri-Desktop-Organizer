@@ -42,6 +42,7 @@ def root():
     root = ct.CTk()
     root.geometry("400x350")
     root.title("Seiri - Desktop Organizer")
+    root.iconbitmap(r'Visual\seiri.ico')
 
     
     initial(root)
