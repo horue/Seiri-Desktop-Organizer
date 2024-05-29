@@ -1,5 +1,6 @@
 import os
 import shutil
+import configparser
 
 
 img_types =('.png', '.jpg', '.webp', '.JPG', '.JPEG', 'jpeg')
