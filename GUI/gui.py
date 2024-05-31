@@ -1,11 +1,13 @@
 import customtkinter as ct
 import easygui
+import time
 from organizer import create_path, organize_files
 
 def organize(check_var):
     option = check_var.get()
     if option == 'on':
         while True:
+            time.sleep(2)
             create_path()
             organize_files(source_path)
     else:
