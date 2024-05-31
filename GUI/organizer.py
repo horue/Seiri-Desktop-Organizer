@@ -1,15 +1,15 @@
 import os
 import shutil
-import configparser
+from reader import *
 
 
-img_types =('.png', '.jpg', '.webp', '.JPG', '.JPEG', 'jpeg')
-docs_types = ('.doc', '.odt', '.pdf', '.PPT', '.pptx', '.docx', '.txt', '.rtf')
-video_types = ('.mp4', '.avi')
-audio_types = ('.mp3', '.webm', '.ogg')
-ps_files = ['.psd', '.PSD']
-zip_files = ('.rar', '.7z', '.zip')
-code_files = ('.py', '.jar', '.c')
+img_types = read_ini('image')
+docs_types = read_ini('doc')
+video_types = read_ini('video')
+audio_types = read_ini('audio')
+ps_files = read_ini('psd')
+zip_files = read_ini('zip')
+code_files = read_ini('code')
 
 
 output_img=os.path.join(os.path.expanduser("~"), "Documents\\Organized\\Organized Images")
