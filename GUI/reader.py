@@ -6,6 +6,3 @@ def read_ini(section, config_file=r'GUI\config.ini'):
     extensions = config.get(section, 'extensions').split()
     extensions = [ext.strip() for ext in extensions]
     return extensions
-
-print(read_ini('image'))
-
