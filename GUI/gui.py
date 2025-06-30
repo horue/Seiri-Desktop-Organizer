@@ -1,7 +1,7 @@
 import customtkinter as ct
 import easygui
 import time
-from organizer import create_path, organize_files
+from modules.organizer import create_path, organize_files
 
 def organize(check_var):
     option = check_var.get()
