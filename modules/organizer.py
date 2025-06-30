@@ -1,6 +1,6 @@
 import os
 import shutil
-from reader import *
+from modules.reader import *
 
 
 img_types = read_ini('image')
