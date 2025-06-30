@@ -10,15 +10,16 @@ audio_types = read_ini('audio')
 ps_files = read_ini('psd')
 zip_files = read_ini('zip')
 code_files = read_ini('code')
+favorite_path = read_ini('path')
 
 
-output_img=os.path.join(os.path.expanduser("~"), "Documents\\Organized\\Organized Images")
-output_docs=os.path.join(os.path.expanduser("~"), "Documents\\Organized\\Organized Documents")
-output_videos=os.path.join(os.path.expanduser("~"), "Documents\\Organized\\Organized Videos")
-output_audios=os.path.join(os.path.expanduser('~'), "Documents\\Organized\\Organized Audios")
-output_photoshop=os.path.join(os.path.expanduser('~'), 'Documents\\Organized\\Organized PSDs')
-output_zip=os.path.join(os.path.expanduser('~'), 'Documents\\Organized\\Organized ZIPs')
-output_code=os.path.join(os.path.expanduser('~'), 'Documents\\Organized\\Organized Codes')
+output_img=os.path.join(os.path.expanduser("~"), f"{favorite_path}\\Organized\\Organized Images")
+output_docs=os.path.join(os.path.expanduser("~"), f"{favorite_path}\\Organized\\Organized Documents")
+output_videos=os.path.join(os.path.expanduser("~"), f"{favorite_path}\\Organized\\Organized Videos")
+output_audios=os.path.join(os.path.expanduser('~'), f"{favorite_path}\\Organized\\Organized Audios")
+output_photoshop=os.path.join(os.path.expanduser('~'), f'{favorite_path}\\Organized\\Organized PSDs')
+output_zip=os.path.join(os.path.expanduser('~'), f'{favorite_path}\\Organized\\Organized ZIPs')
+output_code=os.path.join(os.path.expanduser('~'), f'{favorite_path}\\Organized\\Organized Codes')
 
 
 def create_path():
